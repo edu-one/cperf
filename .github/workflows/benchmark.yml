@@ -1,14 +1,15 @@
 name: Benchmark
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
+  workflow_run:
+    workflows: [Build]
+    types:
+      - completed
     branches: [ "main" ]
 
 jobs:
   benchmark:
-    needs: build
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: self-hosted
     container:
       image: ubuntu:22.04
