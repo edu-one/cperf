@@ -1,4 +1,4 @@
-name: Unit tests
+name: Benchmark
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  benchmark:
     needs: build
     runs-on: self-hosted
     container:
@@ -20,7 +20,7 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Run tests
+      - name: Run benchmarks
         run: |
-          cd build/Release/tests/unit
-          ./cperf_test
+          cd build/Release/tests/performance
+          ./cperf_bench
