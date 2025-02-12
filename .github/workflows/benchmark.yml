@@ -25,5 +25,5 @@ jobs:
 
       - name: Run benchmarks
         run: |
-          cd build-artifacts/performance
+          cd performance
           ./cperf_bench
