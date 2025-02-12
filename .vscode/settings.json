@@ -115,7 +115,8 @@
         "codecvt": "cpp",
         "execution": "cpp",
         "ranges": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "print": "cpp"
     },
     "[cmake]": {
         "editor.defaultFormatter": "cheshirekow.cmake-format",

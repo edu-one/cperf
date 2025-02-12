@@ -3,7 +3,7 @@
 
 include(CMakePrintHelpers)
 
-add_executable(cperf_bench cperf_test.cpp)
+add_executable(cperf_bench factorial_bench.cpp count_if_bench.cpp)
 
 find_package(benchmark REQUIRED)
 target_link_libraries(cperf_bench 

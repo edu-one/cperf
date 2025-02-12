@@ -15,3 +15,12 @@ TEST(FactorialTest, Positive) {
 }
 
 TEST(FactorialTest, Negative) { EXPECT_THROW(dv::cperf::factorial(-1), std::invalid_argument); }
+
+
+TEST(CountIfTest, CountIfAllTheSame) {
+    dv::cperf::Vector2D vv = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    dv::cperf::Pred pred = [](int i) { return i % 2 == 0; };
+    EXPECT_EQ(4, dv::cperf::count_if_range(vv, pred));
+    EXPECT_EQ(4, dv::cperf::count_if_row_major(vv, pred));
+    EXPECT_EQ(4, dv::cperf::count_if_column_major(vv, pred));
+}
