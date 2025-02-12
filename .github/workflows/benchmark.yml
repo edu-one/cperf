@@ -26,4 +26,5 @@ jobs:
       - name: Run benchmarks
         run: |
           cd performance
+          chmod +x cperf_bench
           ./cperf_bench
