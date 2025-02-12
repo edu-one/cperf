@@ -44,9 +44,11 @@ jobs:
         run: cmake --build --preset conan-release
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
+          overwrite: true
+          retention-days: 1
           path: |
             build/Release/tests/performance/cperf_bench
             build/Release/tests/unit/cperf_test
