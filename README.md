@@ -36,6 +36,11 @@ cmake --build --preset conan-debug
 ctest --preset conan-debug
 ```
 
+# Run all tests with just
+```bash
+just test
+```
+
 
 >📝
 > Based on the template https://github.com/valden/cpptest

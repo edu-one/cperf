@@ -1,3 +1,6 @@
+default:
+    @just --list
+
 config:
     cmake --preset conan-debug
 
