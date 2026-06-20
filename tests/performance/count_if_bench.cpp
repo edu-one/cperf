@@ -49,7 +49,6 @@ namespace {
     BENCHMARK_COUNTERS(10, 10);        // Small: 100 elements
     BENCHMARK_COUNTERS(100, 100);      // Medium: 10k elements
     BENCHMARK_COUNTERS(1000, 1000);    // Large: 1M elements
-    BENCHMARK_COUNTERS(10000, 1000);   // XLarge: 10M elements
     BENCHMARK_COUNTERS(10000, 10000);  // XXLarge: 100M elements
 }
 
