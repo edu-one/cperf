@@ -6,9 +6,8 @@ include(CMakePrintHelpers)
 add_executable(cperf_bench factorial_bench.cpp count_if_bench.cpp)
 
 find_package(benchmark REQUIRED)
-target_link_libraries(cperf_bench 
+target_link_libraries(cperf_bench
         PRIVATE cperf
         PRIVATE benchmark::benchmark_main)
 
-#include(GoogleTest)
-#gtest_discover_tests(cperf_bench)
+add_test(NAME cperf_bench COMMAND cperf_bench)

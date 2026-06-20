@@ -1,12 +1,16 @@
+set windows-shell := ["pwsh", "-NoLogo", "-Command"]
+
 default:
     @just --list
 
+conan:
+    conan install . -pr debug --build=missing
+
 config:
-    cmake --preset conan-debug
+    cmake --preset conan-default
 
 build: config
-    cmake --build --preset conan-debug
+    cmake --build build --config Debug
 
 test: build
-    ctest --preset conan-debug
-    ./build/Debug/tests/performance/cperf_bench
+    ctest --test-dir build -C Debug
